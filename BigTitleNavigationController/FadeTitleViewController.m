@@ -28,6 +28,11 @@
     self.navigationBar.btnBack.titleLabel.font=[UIFont systemFontOfSize:15];
     self.navigationBar.btnBack.titleEdgeInsets=UIEdgeInsetsMake(0, 5, 0, 0);
     self.navigationBar.btnBack.width=60;
+    
+
+    
+    self.navigationBar.rightImage = [UIImage imageNamed:@"placeHolderImage.png"];
+
 
     UIView *view=[[UIView alloc] initWithFrame:self.baseViewBounds];
     view.backgroundColor=[UIColor yellowColor];

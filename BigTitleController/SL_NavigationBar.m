@@ -12,6 +12,7 @@
 @interface SL_NavigationBar (){
     float _originTitleCenterX;
 }
+@property (nonatomic, strong) UIImageView *rightImageView;
 
 @end
 
@@ -35,7 +36,11 @@
 
         _btnBack.frame=CGRectMake(0, firstY, btnWidth, btnWidth);
         _lblTitle.frame=CGRectMake(self.titleMargin, _btnBack.bottom, frame.size.width-self.titleMargin*2, frame.size.height-_btnBack.bottom);
+        
+        NSLog(@"😄%f",frame.size.height-_btnBack.bottom);
+        
         _lineView.frame=CGRectMake(self.lineMargin, frame.size.height-1, frame.size.width-self.lineMargin, 1);
+        
         
     }
     return self;
@@ -123,6 +128,38 @@
         }            
             break;
     }
+    CGRect navigationFrame = self.frame;
+    navigationFrame.origin.y=(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
+    navigationFrame.size.height=NavigationBarNormalHeight-(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
+    self.frame=navigationFrame;
+    
+    self.lblTitle.font=[UIFont systemFontOfSize:_lblTitleFontSize-(_lblTitleFontSize-_lblTitleSmallFontSize)*scale];
+    [self.lblTitle sizeToFit];
+    
+    
+    float lblTitleHeight=NavigationBarNormalHeight-self.btnBack.bottom;
+    
+    self.lblTitle.height=lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
+    
+    
+    
+    
+    
+    
+    
+    
+    self.rightImageView.alpha = 1-scale*2;
+    CGFloat rightImageWidth = lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
+    self.rightImageView.height = rightImageWidth;
+    self.rightImageView.width = rightImageWidth;
+
+    //    CGAffineTransform transform = self.rightImageView.transform;
+//   transform = CGAffineTransformScale(transform, 1-scale*2,1-scale*2);//前面的2表示横向放大2倍，后边的0.5表示纵向缩小一半
+//    self.rightImageView.transform = transform;
+    
+
+
+    
 }
 
 -(UILabel *)lblSmallTitle{
@@ -199,12 +236,24 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setRightImage:(UIImage *)rightImage {
+    _rightImage = rightImage;
+    UIImageView *rightImageView = [[UIImageView alloc]init];
+    
+    
+//    _lblTitle.frame=CGRectMake(self.titleMargin, _btnBack.bottom, frame.size.width-self.titleMargin*2, frame.size.height-_btnBack.bottom);
+    CGFloat imageWidth = self.frame.size.height-_btnBack.bottom;
+    
+    NSLog(@"✈️%f",imageWidth);
+
+    rightImageView.frame = CGRectMake(self.frame.size.width - self.titleMargin - imageWidth, _btnBack.bottom, imageWidth,imageWidth);
+    [self addSubview:rightImageView];
+    rightImageView.image = _rightImage;
+    
+    self.rightImageView = rightImageView;
+
 }
-*/
+
+
 
 @end

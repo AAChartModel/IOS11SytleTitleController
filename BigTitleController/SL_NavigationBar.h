@@ -24,22 +24,23 @@ typedef enum SL_NavigationBarScrollType:NSInteger{
 
 @interface SL_NavigationBar : UIView
 
-@property (nonatomic,strong)UILabel  * lblSmallTitle;
-@property (nonatomic,strong)UILabel  * lblTitle;
-@property (nonatomic,strong)UIButton * btnBack;
-@property (nonatomic,strong)UIView   * lineView;
+@property (nonatomic, strong) UILabel  * lblSmallTitle;
+@property (nonatomic, strong) UILabel  * lblTitle;
+@property (nonatomic, strong) UIButton * btnBack;
+@property (nonatomic, strong) UIView   * lineView;
+@property (nonatomic, strong) UIImage *rightImage;
 
-@property (nonatomic,assign)CGFloat lblTitleFontSize;
-@property (nonatomic,assign)CGFloat lblTitleSmallFontSize;
+@property (nonatomic, assign) CGFloat lblTitleFontSize;
+@property (nonatomic, assign) CGFloat lblTitleSmallFontSize;
 
-@property (nonatomic,assign)CGFloat lineMargin;
+@property (nonatomic, assign) CGFloat lineMargin;
 
-@property (nonatomic,assign)CGFloat titleMargin;
+@property (nonatomic, assign) CGFloat titleMargin;
 
-@property (nonatomic,strong)NSString *title;
+@property (nonatomic, strong) NSString *title;
 
-@property (nonatomic,assign)SL_NavigationBarScrollType scrollType;
+@property (nonatomic, assign) SL_NavigationBarScrollType scrollType;
 
--(void)navigationBarAnimationWithScale:(CGFloat)scale;
+- (void)navigationBarAnimationWithScale:(CGFloat)scale;
 
 @end

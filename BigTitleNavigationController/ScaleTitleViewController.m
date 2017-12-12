@@ -24,6 +24,8 @@
     self.navigationBar.scrollType=SL_NavigationBarScrollType_Scale;
     
     self.navigationBar.titleMargin=self.navigationBar.btnBack.right;
+    self.navigationBar.lineView.backgroundColor = [UIColor whiteColor];//设置底部分割线颜色为白色
+    self.navigationBar.rightImage = [UIImage imageNamed:@"placeHolderImage.png"];
     
     for (NSInteger i=0; i<6; i++) {
         UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, self.navigationBar.bottom+i*80, 60, 60)];

@@ -29,6 +29,9 @@
     self.navigationBar.btnBack.titleEdgeInsets=UIEdgeInsetsMake(0, 5, 0, 0);
     self.navigationBar.btnBack.width=60;
     
+    self.navigationBar.rightImage = [UIImage imageNamed:@"placeHolderImage.png"];
+
+    
     UITableView *table=[[UITableView alloc] initWithFrame:self.baseViewBounds style:UITableViewStylePlain];
     table.delegate=self;
     table.dataSource=self;
