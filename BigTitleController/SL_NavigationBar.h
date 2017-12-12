@@ -42,5 +42,5 @@ typedef enum SL_NavigationBarScrollType:NSInteger{
 @property (nonatomic, assign) SL_NavigationBarScrollType scrollType;
 
 - (void)navigationBarAnimationWithScale:(CGFloat)scale;
-
+- (void)rightImageAddDidTapEventHandler:(void(^)(id sender))handler;
 @end

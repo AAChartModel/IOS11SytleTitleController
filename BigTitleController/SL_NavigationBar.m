@@ -8,11 +8,12 @@
 
 #import "SL_NavigationBar.h"
 #import "UIView+SLFrame.h"
+#import "UIControl+BlocksKit.h"
 
 @interface SL_NavigationBar (){
     float _originTitleCenterX;
 }
-@property (nonatomic, strong) UIImageView *rightImageView;
+@property (nonatomic, strong) UIButton *rightImageBtn;
 
 @end
 
@@ -36,8 +37,6 @@
 
         _btnBack.frame=CGRectMake(0, firstY, btnWidth, btnWidth);
         _lblTitle.frame=CGRectMake(self.titleMargin, _btnBack.bottom, frame.size.width-self.titleMargin*2, frame.size.height-_btnBack.bottom);
-        
-        NSLog(@"😄%f",frame.size.height-_btnBack.bottom);
         
         _lineView.frame=CGRectMake(self.lineMargin, frame.size.height-1, frame.size.width-self.lineMargin, 1);
         
@@ -148,10 +147,10 @@
     
     
     
-    self.rightImageView.alpha = 1-scale*2;
+    self.rightImageBtn.alpha = 1-scale*2;
     CGFloat rightImageWidth = lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
-    self.rightImageView.height = rightImageWidth;
-    self.rightImageView.width = rightImageWidth;
+    self.rightImageBtn.height = rightImageWidth;
+    self.rightImageBtn.width = rightImageWidth;
 
     //    CGAffineTransform transform = self.rightImageView.transform;
 //   transform = CGAffineTransformScale(transform, 1-scale*2,1-scale*2);//前面的2表示横向放大2倍，后边的0.5表示纵向缩小一半
@@ -238,20 +237,20 @@
 
 - (void)setRightImage:(UIImage *)rightImage {
     _rightImage = rightImage;
-    UIImageView *rightImageView = [[UIImageView alloc]init];
     
+    UIButton *rightImageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        CGFloat imageWidth = self.frame.size.height-_btnBack.bottom;
     
-//    _lblTitle.frame=CGRectMake(self.titleMargin, _btnBack.bottom, frame.size.width-self.titleMargin*2, frame.size.height-_btnBack.bottom);
-    CGFloat imageWidth = self.frame.size.height-_btnBack.bottom;
-    
-    NSLog(@"✈️%f",imageWidth);
+    rightImageBtn.frame = CGRectMake(self.frame.size.width - self.titleMargin - imageWidth, _btnBack.bottom, imageWidth,imageWidth);
+    [self addSubview:rightImageBtn];
+    [rightImageBtn setImage:_rightImage forState:UIControlStateNormal];
+    self.rightImageBtn = rightImageBtn;
+ 
+ 
+}
 
-    rightImageView.frame = CGRectMake(self.frame.size.width - self.titleMargin - imageWidth, _btnBack.bottom, imageWidth,imageWidth);
-    [self addSubview:rightImageView];
-    rightImageView.image = _rightImage;
-    
-    self.rightImageView = rightImageView;
-
+- (void)rightImageAddDidTapEventHandler:(void(^)(id sender))handler {
+    [self.rightImageBtn bk_addEventHandler:handler forControlEvents:UIControlEventTouchUpInside];
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27997D9A1FDFCEC900B83003 /* UIControl+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27997D981FDFCEC900B83003 /* UIControl+BlocksKit.m */; };
+		27997D9C1FDFD3D900B83003 /* placeHolderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 27997D9B1FDFD3D900B83003 /* placeHolderImage.png */; };
 		849619E31EE92F130075DC29 /* CustomBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849619E21EE92F130075DC29 /* CustomBaseViewController.m */; };
 		84DE99FD1EE7FAEB00ECEA21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DE99FC1EE7FAEB00ECEA21 /* main.m */; };
 		84DE9A001EE7FAEB00ECEA21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DE99FF1EE7FAEB00ECEA21 /* AppDelegate.m */; };
@@ -43,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27997D981FDFCEC900B83003 /* UIControl+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BlocksKit.m"; sourceTree = "<group>"; };
+		27997D991FDFCEC900B83003 /* UIControl+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BlocksKit.h"; sourceTree = "<group>"; };
+		27997D9B1FDFD3D900B83003 /* placeHolderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolderImage.png; sourceTree = "<group>"; };
 		849619E11EE92F130075DC29 /* CustomBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBaseViewController.h; sourceTree = "<group>"; };
 		849619E21EE92F130075DC29 /* CustomBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBaseViewController.m; sourceTree = "<group>"; };
 		84BD31B61F74F57B003C7923 /* IOS11SytleTitleController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = IOS11SytleTitleController.podspec; sourceTree = SOURCE_ROOT; };
@@ -141,6 +146,7 @@
 				84DE9A421EE8249500ECEA21 /* ScaleToCenterViewController.m */,
 				D8F3173E1EE877E100949243 /* FadeTitleViewController.h */,
 				D8F3173F1EE877E100949243 /* FadeTitleViewController.m */,
+				27997D9B1FDFD3D900B83003 /* placeHolderImage.png */,
 				84DE9A521EE9247200ECEA21 /* UIViewControllerScroll */,
 				84DE9A441EE9246C00ECEA21 /* BigTitleController */,
 				84DE9A041EE7FAEB00ECEA21 /* Main.storyboard */,
@@ -181,6 +187,8 @@
 		84DE9A441EE9246C00ECEA21 /* BigTitleController */ = {
 			isa = PBXGroup;
 			children = (
+				27997D991FDFCEC900B83003 /* UIControl+BlocksKit.h */,
+				27997D981FDFCEC900B83003 /* UIControl+BlocksKit.m */,
 				84DE9A471EE9246C00ECEA21 /* SL_BaseViewController.h */,
 				84DE9A481EE9246C00ECEA21 /* SL_BaseViewController.m */,
 				84DE9A491EE9246C00ECEA21 /* SL_NavigationBar.h */,
@@ -308,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DE9A0B1EE7FAEB00ECEA21 /* LaunchScreen.storyboard in Resources */,
+				27997D9C1FDFD3D900B83003 /* placeHolderImage.png in Resources */,
 				84DE9A081EE7FAEB00ECEA21 /* Assets.xcassets in Resources */,
 				84DE9A061EE7FAEB00ECEA21 /* Main.storyboard in Resources */,
 			);
@@ -334,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27997D9A1FDFCEC900B83003 /* UIControl+BlocksKit.m in Sources */,
 				84DE9A501EE9246D00ECEA21 /* SL_NavigationBar.m in Sources */,
 				84DE9A551EE9247200ECEA21 /* UIViewController+ScrollBackground.m in Sources */,
 				84DE9A031EE7FAEB00ECEA21 /* ViewController.m in Sources */,

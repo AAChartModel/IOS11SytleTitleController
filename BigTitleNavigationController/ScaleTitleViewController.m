@@ -34,6 +34,11 @@
         [self.view addSubview:view];
     }
     // Do any additional setup after loading the view.
+    
+    
+    [self.navigationBar rightImageAddDidTapEventHandler:^(id sender) {
+        NSLog(@"测试为右侧图像添加点击事件是否成功");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
