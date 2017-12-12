@@ -127,30 +127,26 @@
         }            
             break;
     }
-    CGRect navigationFrame = self.frame;
-    navigationFrame.origin.y=(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
-    navigationFrame.size.height=NavigationBarNormalHeight-(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
-    self.frame=navigationFrame;
-    
-    self.lblTitle.font=[UIFont systemFontOfSize:_lblTitleFontSize-(_lblTitleFontSize-_lblTitleSmallFontSize)*scale];
-    [self.lblTitle sizeToFit];
-    
-    
-    float lblTitleHeight=NavigationBarNormalHeight-self.btnBack.bottom;
-    
-    self.lblTitle.height=lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
-    
-    
-    
-    
-    
-    
+//    CGRect navigationFrame = self.frame;
+//    navigationFrame.origin.y=(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
+//    navigationFrame.size.height=NavigationBarNormalHeight-(NavigationBarNormalHeight-(44.+ScreenStatusBottom))*(scale);
+//    self.frame=navigationFrame;
+//
+//    self.lblTitle.font=[UIFont systemFontOfSize:_lblTitleFontSize-(_lblTitleFontSize-_lblTitleSmallFontSize)*scale];
+//    [self.lblTitle sizeToFit];
+//
+//
+//    float lblTitleHeight=NavigationBarNormalHeight-self.btnBack.bottom;
+//
+//    self.lblTitle.height=lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
+//
+
     
     
     self.rightImageBtn.alpha = 1-scale*2;
-    CGFloat rightImageWidth = lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
-    self.rightImageBtn.height = rightImageWidth;
-    self.rightImageBtn.width = rightImageWidth;
+//    CGFloat rightImageWidth = lblTitleHeight-(lblTitleHeight-self.btnBack.height)*scale;
+//    self.rightImageBtn.height = rightImageWidth;
+//    self.rightImageBtn.width = rightImageWidth;
 
     //    CGAffineTransform transform = self.rightImageView.transform;
 //   transform = CGAffineTransformScale(transform, 1-scale*2,1-scale*2);//前面的2表示横向放大2倍，后边的0.5表示纵向缩小一半
@@ -239,9 +235,15 @@
     _rightImage = rightImage;
     
     UIButton *rightImageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        CGFloat imageWidth = self.frame.size.height-_btnBack.bottom;
+    CGFloat imageWidth = 40;
+    rightImageBtn.layer.cornerRadius = 5;
+    rightImageBtn.layer.masksToBounds = YES;
     
-    rightImageBtn.frame = CGRectMake(self.frame.size.width - self.titleMargin - imageWidth, _btnBack.bottom, imageWidth,imageWidth);
+//    rightImageBtn.frame = CGRectMake(self.frame.size.width - 30 - imageWidth, _btnBack.bottom, imageWidth,imageWidth);
+    
+    rightImageBtn.center = CGPointMake(self.frame.size.width-30-imageWidth/2, _lblTitle.centerY);
+    rightImageBtn.bounds = CGRectMake(0, 0, imageWidth, imageWidth);
+    
     [self addSubview:rightImageBtn];
     [rightImageBtn setImage:_rightImage forState:UIControlStateNormal];
     self.rightImageBtn = rightImageBtn;
